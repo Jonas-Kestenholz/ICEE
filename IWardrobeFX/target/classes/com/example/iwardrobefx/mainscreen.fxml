@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iwardrobefx.MainScreenController">
+    <children>
+        <AnchorPane style="-fx-background-color: #262626;" VBox.vgrow="ALWAYS">
+            <children>
+                <ImageView fitHeight="414.0" fitWidth="573.0" layoutX="1.0" layoutY="26.0">
+                    <image>
+                        <Image url="https://lh5.googleusercontent.com/p/AF1QipMSzuJgopcNx8gX6ZShj5UtNTIHWn_Y9_E39dtb" />
+                    </image>
+                    <viewport>
+                        <Rectangle2D />
+                    </viewport>
+                </ImageView>
+                <Button fx:id="createTicket" layoutX="602.0" layoutY="254.0" mnemonicParsing="false" onAction="#createTicket" prefHeight="43.0" prefWidth="262.0" style="-fx-background-color: #404040; -fx-border-radius: 20;" text="Indlever" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Button>
+                <Button fx:id="getTicket" layoutX="603.0" layoutY="156.0" mnemonicParsing="false" onAction="#getItem" prefHeight="43.0" prefWidth="262.0" style="-fx-background-color: #404040;" text="Afhent" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Button>
+                <Text fill="WHITE" layoutX="628.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Text>
+                <MenuBar layoutX="2.0" layoutY="2.0" prefHeight="25.0" prefWidth="949.0" style="-fx-background-color: #a3a3a3;">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Virksomhed">
+                            <items>
+                                <MenuItem id="companyLogin" fx:id="menuItemLogin" mnemonicParsing="false" onAction="#showPasswordField" text="Login" />
+                                <MenuItem id="mainScreen" mnemonicParsing="false" text="Tilbage" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Undo" />
+                                <MenuItem mnemonicParsing="false" text="Redo" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="FAQ">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                            </items>
+                        </Menu>
+                    </menus>
+                    <tooltip>
+                        <Tooltip text="Virksomheds login" />
+                    </tooltip>
+                </MenuBar>
+            <PasswordField fx:id="passwordField" layoutX="350.0" layoutY="214.0" onAction="#switchToAnotherScene" promptText="Personale kode" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
