@@ -22,13 +22,14 @@ import javafx.stage.Stage;
 
 public class MainScreenController {
 
-
+    private Login login;
     public Button getTicket;
 
     @FXML
     private PasswordField passwordField;
 
     public Button createTicket;
+
 
 
 
@@ -139,6 +140,7 @@ public class MainScreenController {
                 TicketHandler.ticketGeneration(customer);
             }
         });
+
     }
 
     // Metoder der laver vores customer nummer

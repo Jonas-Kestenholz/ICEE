@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,35 +12,40 @@
 <?import javafx.scene.text.Font?>
 
 <VBox prefHeight="440.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iwardrobefx.Login">
-   <children>
-      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #262626;" VBox.vgrow="ALWAYS">
-         <children>
-            <TextField fx:id="ticketCountField" layoutX="690.0" layoutY="272.0" promptText="Max antal jakker">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextField>
-            <Spinner fx:id="maxTicketSpinner" layoutX="690.0" layoutY="210.0" prefHeight="35.0" prefWidth="198.0" />
-            <MenuBar layoutY="-1.0" prefHeight="25.0" prefWidth="949.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Virksomhed">
-                  <items>
-                    <MenuItem fx:id="Back" mnemonicParsing="false" onAction="#switchToAnotherScene" text="Tilbage" />
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-            <ImageView fitHeight="478.0" fitWidth="625.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="https://images.squarespace-cdn.com/content/v1/60146ec5ca0b337ce6a69312/19c98cd5-e1ff-49dd-9dd2-5a9e70c84cca/b%26w-hi-res-5.jpg?format=1500w" />
-               </image>
-            </ImageView>
-         </children></AnchorPane>
-   </children>
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #262626;" VBox.vgrow="ALWAYS">
+            <children>
+                <TextField fx:id="ticketCountField" layoutX="690.0" layoutY="272.0" promptText="Max antal jakker">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </TextField>
+                <MenuBar layoutY="-1.0" prefHeight="25.0" prefWidth="949.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Virksomhed">
+                            <items>
+                                <MenuItem fx:id="Back" mnemonicParsing="false" onAction="#incrementTicketCount" text="Tilbage" />
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ImageView fitHeight="478.0" fitWidth="625.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="https://images.squarespace-cdn.com/content/v1/60146ec5ca0b337ce6a69312/19c98cd5-e1ff-49dd-9dd2-5a9e70c84cca/b%26w-hi-res-5.jpg?format=1500w" />
+                    </image>
+                </ImageView>
+                <Label fx:id="ticketCountLabel" layoutX="690.0" layoutY="218.0" prefHeight="45.0" prefWidth="198.0" text="0" textFill="#d0d0d0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
 </VBox>
