@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,16 +15,10 @@
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #262626;" VBox.vgrow="ALWAYS">
             <children>
-                <TextField fx:id="ticketCountField" layoutX="690.0" layoutY="272.0" promptText="Max antal jakker">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </TextField>
                 <MenuBar layoutY="-1.0" prefHeight="25.0" prefWidth="949.0">
                     <menus>
                         <Menu mnemonicParsing="false" text="Virksomhed">
                             <items>
-                                <MenuItem fx:id="Back" mnemonicParsing="false" onAction="#incrementTicketCount" text="Tilbage" />
                                 <MenuItem mnemonicParsing="false" text="Close" />
                             </items>
                         </Menu>
@@ -40,7 +34,22 @@
                         <Image url="https://images.squarespace-cdn.com/content/v1/60146ec5ca0b337ce6a69312/19c98cd5-e1ff-49dd-9dd2-5a9e70c84cca/b%26w-hi-res-5.jpg?format=1500w" />
                     </image>
                 </ImageView>
-                <Label fx:id="ticketCountLabel" layoutX="690.0" layoutY="218.0" prefHeight="45.0" prefWidth="198.0" text="0" textFill="#d0d0d0">
+                <Label fx:id="ticketCountLabel" layoutX="678.0" layoutY="109.0" prefHeight="45.0" prefWidth="249.0" text="0" textFill="#d0d0d0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="setMaxTicketsButton" layoutX="678.0" layoutY="171.0" mnemonicParsing="false" onAction="#handleSetMaxTickets" prefHeight="39.0" prefWidth="249.0" text="Indstil max antal jakker">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Label layoutX="678.0" layoutY="49.0" prefHeight="39.0" prefWidth="249.0" text="Antal nuværende tickets" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="maxTickets" layoutX="678.0" layoutY="244.0" prefHeight="39.0" prefWidth="249.0" text="300" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>

@@ -22,7 +22,9 @@ import javafx.stage.Stage;
 
 public class MainScreenController {
 
-    private Login login;
+
+    private int ticketCounter = 0;
+    private Login loginController;
     public Button getTicket;
 
     @FXML
@@ -31,7 +33,9 @@ public class MainScreenController {
     public Button createTicket;
 
 
-
+    public void setLoginController(Login loginController) {
+        this.loginController = loginController;
+    }
 
     @FXML
     public void showPasswordField() {
@@ -51,9 +55,13 @@ public class MainScreenController {
 
 
                 Scene scene = new Scene(root);
-                Stage stage = (Stage) passwordField.getScene().getWindow();
-                stage.setScene(scene);
-                //stage.show();
+                Stage newStage = new Stage(); // Opret en ny Stage
+                newStage.setScene(scene);
+                newStage.show();
+
+                Login loginController = loader.getController();
+                setLoginController(loginController);
+                passwordField.setVisible(false);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -61,7 +69,6 @@ public class MainScreenController {
             System.out.println("Forkert adgangskode!");
         }
     }
-
 
 
     public void getItem() {
@@ -140,6 +147,10 @@ public class MainScreenController {
                 TicketHandler.ticketGeneration(customer);
             }
         });
+        ticketCounter++;
+        if (loginController != null) {
+            loginController.updateTicketCountLabel(ticketCounter);
+        }
 
     }
 
