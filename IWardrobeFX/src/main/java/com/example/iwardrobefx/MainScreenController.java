@@ -17,13 +17,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
 public class MainScreenController {
 
 
-    private int ticketCounter = 0;
+    public int ticketCounter;
     private Login loginController;
     public Button getTicket;
 
@@ -31,6 +32,10 @@ public class MainScreenController {
     private PasswordField passwordField;
 
     public Button createTicket;
+
+
+
+
 
 
     public void setLoginController(Login loginController) {
@@ -42,6 +47,44 @@ public class MainScreenController {
         passwordField.setVisible(true);
     }
 
+    @FXML
+    private void openFAQTabsWindow() {
+        TabPane tabPane = new TabPane();
+
+        Tab generalTab = new Tab("Generelt");
+        Tab accountTab = new Tab("Brugerkonto");
+
+        VBox generalContent = new VBox();
+        Label generalQuestion1 = new Label("Spørgsmål 1: Var det her en fed opgave?");
+        TextArea generalAnswer1 = new TextArea("Svar 1: Meget spændende, uhhhh.");
+
+        generalAnswer1.setWrapText(true);
+        generalAnswer1.setEditable(false);
+
+        generalContent.getChildren().addAll(generalQuestion1, generalAnswer1);
+
+        generalTab.setContent(generalContent);
+
+        VBox accountContent = new VBox();
+        Label accountQuestion1 = new Label("Spørgsmål 1: Hvordan ændrer jeg min adgangskode?");
+        TextArea accountAnswer1 = new TextArea("Svar 1: Sut dig selv");
+
+        accountAnswer1.setWrapText(true);
+        accountAnswer1.setEditable(false);
+
+        accountContent.getChildren().addAll(accountQuestion1, accountAnswer1);
+
+        accountTab.setContent(accountContent);
+
+        tabPane.getTabs().addAll(generalTab, accountTab);
+
+        Scene scene = new Scene(tabPane, 400, 300);
+
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("FAQ");
+        stage.show();
+    }
 
     @FXML
     public void switchToAnotherScene() {

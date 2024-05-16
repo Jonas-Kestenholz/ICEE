@@ -28,8 +28,14 @@ public class Login {
         private Label ticketCountLabel;
         private int maxTicketValue = 300;
 
+        @FXML
+        private Label ticketCountTotallabel;
 
 
+
+    public void updateTicketCountTotalLabel(int ticketCount,int ticketCountTotal) {
+        ticketCountTotallabel.setText("Antal billetter: " + (ticketCount + ticketCountTotal));
+    }
         @FXML
         private void initialize() {
             initMaxTicketsButton();

@@ -39,12 +39,12 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Button fx:id="setMaxTicketsButton" layoutX="678.0" layoutY="171.0" mnemonicParsing="false" onAction="#handleSetMaxTickets" prefHeight="39.0" prefWidth="249.0" text="Indstil max antal jakker">
+                <Button fx:id="setMaxTicketsButton" layoutX="678.0" layoutY="171.0" mnemonicParsing="false" onAction="#handleSetMaxTickets" prefHeight="39.0" prefWidth="212.0" text="Indstil max antal jakker">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Label layoutX="678.0" layoutY="49.0" prefHeight="39.0" prefWidth="249.0" text="Antal nuværende tickets" textFill="WHITE">
+                <Label layoutX="678.0" layoutY="49.0" prefHeight="39.0" prefWidth="249.0" text="Nuværende tickets" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -54,6 +54,16 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
+            <Label fx:id="ticketCountTotallabel" layoutX="678.0" layoutY="367.0" prefHeight="45.0" prefWidth="249.0" text="0" textFill="#d0d0d0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="678.0" layoutY="308.0" prefHeight="39.0" prefWidth="249.0" text="Totale tickets" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>
